@@ -16,9 +16,7 @@ Processing sketch in alpha version for data visualizer for DataNodes with 3 axes
 
 ## Screenshots
 
-http://dl.dropbox.com/u/62786/emerge-dataviz/emerge-dataviz-alpha-sketch-screen01.png
-http://dl.dropbox.com/u/62786/emerge-dataviz/emerge-dataviz-alpha-sketch-screen02.png
-http://dl.dropbox.com/u/62786/emerge-dataviz/emerge-dataviz-alpha-sketch-screen03.png
+![Screen 1](http://dl.dropbox.com/u/62786/emerge-dataviz/emerge-dataviz-alpha-sketch-screen01.png)
 
 ## Notes
 
