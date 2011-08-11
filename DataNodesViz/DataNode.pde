@@ -44,10 +44,12 @@ class DataNode {
   
   public void update(float x, float y, float z) {
     accelerometerVector.set( x  , y , z );
-    accelerometerVector.normalize();
+//    accelerometerVector.normalize();
     
-    directionVector.set( accelerometerVector.x - 0.5, accelerometerVector.y - 0.5, accelerometerVector.z - 0.5 );
-    magnitude = sqrt( pow( directionVector.x, 2 ) + pow( directionVector.y, 2 ) + pow( directionVector.z, 2 ) );
+//    directionVector.set( accelerometerVector.x - 0.5, accelerometerVector.y - 0.5, accelerometerVector.z - 0.5 );
+//    directionVector.normalize();
+    directionVector.set( accelerometerVector.x, accelerometerVector.y, accelerometerVector.z );
+   magnitude = sqrt( pow( directionVector.x, 2 ) + pow( directionVector.y, 2 ) + pow( directionVector.z, 2 ) );
   }
 
   private void drawDirectionVector() {

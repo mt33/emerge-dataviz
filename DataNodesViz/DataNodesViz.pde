@@ -51,8 +51,8 @@ void createDataNodes() {
 }
 
 void draw()  {
-  background(70);
-  drawRoom();
+  background(0);
+//  drawRoom();
 
   if ( ! paused ) {
     readAccelerometerData();  
@@ -120,9 +120,9 @@ void readAccelerometerData() {
     }
  
     // grab the last 3 pieces which are xyz accel data points      
-    x = float( pieces[ 5 ] );
-    y = float( pieces[ 6 ] );
-    z = float( pieces[ 7 ] );
+    x = float( pieces[ 5 ] ) / 512;
+    y = float( pieces[ 6 ] ) / 512;
+    z = float( pieces[ 7 ] ) / 512;
       
     dataNodes[index-1].update( x, y, z );
     println( "Updating dataNode " + index + " with magnitude " + dataNodes[index-1].magnitude );
