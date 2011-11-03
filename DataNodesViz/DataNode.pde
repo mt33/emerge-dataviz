@@ -15,6 +15,7 @@ class DataNode {
   color c;
   PVector accelerometerVector, directionVector;
   Cone arrowHead;
+  float myldr, myfoam, mypaper;
   
   DataNode (PApplet parent, String id, int posX, int posY, int posZ ) {
     this.id = id; // ie.  /minibee.1/node.1/accel
@@ -39,7 +40,19 @@ class DataNode {
       drawDirectionVector();
       drawIdLabel();
       drawAxis();
+      translate( -3, 0, 0 ); 
+      drawSmallSphere( myldr, color( 0, 100, 0 ) );      
+      translate( 3, 0, 0 ); 
+      drawSmallSphere( myfoam, color( 100, 0, 0 ) );            
+      translate( 3, 0, 0 ); 
+      drawSmallSphere( mypaper, color( 0, 0, 100 ) );                  
     popMatrix();
+  }
+
+  public void update2(float ldr, float foam, float paper) {
+    myldr = ldr;
+    myfoam = foam;
+    mypaper = paper;
   }
   
   public void update(float x, float y, float z) {
@@ -88,6 +101,18 @@ class DataNode {
     popMatrix(); 
   }
   
+  private void drawSmallSphere( float val, color mycolor ) {
+    pushMatrix();
+        translate( 0, val * 6 - 12, 0 );
+        scale( 1 );
+        //strokeWeight(1);
+        //stroke(200, 50);
+        noStroke();
+        fill( mycolor, map( val, 0, 2, 200, 50) );
+        sphereDetail( 12 );
+        sphere(1);      
+    popMatrix(); 
+  }
   
   
   private void drawIdLabel() {
